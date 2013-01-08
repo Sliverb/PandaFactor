@@ -1,0 +1,22 @@
+<div class="facebookButton">
+	<a href="https://login.monster.com/FBLandingPage.aspx?rurl=http%3a%2f%2fmy.monster.com%2fprofile" target="_blank">
+		<div class="leftCurve"></div>
+		<img src="http://media.newjobs.com/cjt/preview/beknown/v2/images/faceBookButtonLogo.png">
+		<span>Connect with Facebook</span>
+		<div class="rightCurve"></div>
+	</a>
+</div>
+
+.facebookButton a span {
+background: url(http://media.newjobs.com/cjt/preview/beknown/v2/images/faceBookButtonBg.png) repeat-x;
+line-height: 37px;
+text-decoration: none;
+padding: 0 10px;
+margin: 0;
+float: left;
+color: white;
+font-weight: bold;
+font-size: 15px;
+text-shadow: 0 -2px #0A4FA9;
+cursor: pointer;
+}

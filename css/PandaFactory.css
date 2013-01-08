@@ -1,0 +1,482 @@
+html, body, div, h1, h2, h3, h4, h5, h6, p, img, dl, dt, dd, ol, ul, li, table, caption, tbody, tfoot, thead, tr, th, td, form, fieldset, embed, object, applet, .searchBlock{
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+body{
+	font-family: "Segoe UI", Arial, Verdana, Geneva, Helvetica, sans-serif;
+	font-size:14px;
+	color: #000000;
+	background-color: black;
+}
+
+/* -----------------------------------------------------
+
+------------------COMMON ELEMENTS BEGINS----------------
+
+--------------------------------------------------------*/
+
+ul {
+	list-style: none;
+}
+
+h1, h2, h3{
+	padding: 0 10px 0 0;
+	font-weight: normal;
+}
+
+h4, h5, table{
+	font-size: 1em;
+}
+
+a, a:visited {
+	color: #1080DD;
+	text-decoration: none;
+}
+
+a:hover{
+	color: #0C5999;
+}
+
+.clear{
+	clear:both;
+}
+
+.inlineBlock{
+	position: relative;
+	display: inline-block;
+}
+
+i{
+	display: inline-block;
+	zoom: 1;
+	vertical-align: text-top;
+	/*background: url(../img/twitter_web_sprite_icons.png) no-repeat 0px 0px;*/
+}
+
+.default h2, .default h2 a, .default h2 a:visited{
+	color: #1080DD;
+	font-size: 21px;
+}
+
+table{
+	border-collapse: collapse;
+	border-width: 0;
+	empty-cells: show;
+}
+
+.container{
+	width: 830px;
+	height: 100%;
+	min-width: 830px;
+	margin: 0px auto;
+	position:relative;
+}
+
+.rounded3{
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+}
+
+.shadow{
+	-webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, .2);
+	-moz-box-shadow: inset 0 1px 2px rgba(0,0,0,.2);
+	box-shadow: inset 0 1px 2px rgba(0, 0, 0, .2);
+}
+
+.shadow:focus{
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: inset none;
+}
+
+.transition{
+	-webkit-transition: all .2s ease-in-out;
+	-moz-transition: all .2s ease-in-out;
+	transition: all .2s ease-in-out;
+}
+
+.leftShadow{
+	-webkit-box-shadow: -5px 0px 8px -6px rgba(0, 0, 0, 0.35);
+	box-shadow: -5px 0px 8px -6px rgba(0, 0, 0, 0.35);
+	-moz-box-shadow: -5px 0px 8px -6px rgba(0,0,0,.35);
+}
+
+.rightShadow{
+	-webkit-box-shadow: 5px 0px 8px -6px rgba(0, 0, 0, 0.35);
+	box-shadow: 5px 0px 8px -6px rgba(0, 0, 0, 0.35);
+	-moz-box-shadow: 5px 0px 8px -6px rgba(0,0,0,.35);
+}
+
+.allShadow{
+	-webkit-box-shadow: 0px 0px 12px -2px rgba(0, 0, 0, 0.35);
+	box-shadow: 0px 0px 12px -2px rgba(0, 0, 0, 0.35);
+	-moz-box-shadow: 0px 0px 21px -6px rgba(0,0,0,.35);
+}
+
+/* -----------------------------------------------------
+
+------------------COMMON ELEMENTS ENDS------------------
+
+--------------------------------------------------------*/
+
+#start-dom{
+	height: 100%;
+}
+
+/* -----------------------------------------------------
+
+------------------TOP NAVIGATION BEGINS-----------------
+
+--------------------------------------------------------*/
+
+.tophub{
+	position: relative;
+	min-width: 845px;
+	-webkit-box-shadow: 0 5px 8px rgba(0, 0, 0, 0.35);
+	box-shadow: 0 5px 8px rgba(0, 0, 0, 0.35);
+	-moz-box-shadow: 0 5px 8px rgba(0,0,0,.35);
+	z-index: 2;
+}
+
+.topnav{
+	position: relative;
+	min-width: 845px;
+	background-color: #E285FF;
+	height: 50px;
+}
+
+.navLeft, .naviItem{
+	float: left;
+}
+
+.navLeft{
+	margin-right: 12px;
+}
+
+.naviItem{
+	padding: 5px 0px;
+}
+
+.naviLink, .naviLink:visited{
+	display: block;
+	height: 12px;
+	padding: 13px 12px 15px;
+	margin: 0px 12px;
+	/*font-weight: bold;*/
+	line-height: 1;
+	color: #ffffff;
+	/*text-shadow: 0 -1px 0 rgba(0, 0, 0, .75);*/
+	font-size: 13px;
+	text-transform: uppercase;
+}
+
+.naviItem, .naviLink, .naviLink:visited{
+	position: relative;
+}
+
+.naviLink:hover{
+	color: #1080dd;
+}
+
+.naviLogoLink{
+	padding-left: 0px;
+	padding-right: 0px;
+}
+
+.mainLogo{
+	text-decoration: none;
+	background: url(../img/intanLogo.png) no-repeat;
+	width: 170px;
+	height: 28px;
+	display: inline-block;
+	margin-top: 9px;
+}
+
+.naviImage{
+	float: left;
+	margin: -4px 6px 0 0;
+}
+
+.navRight{
+	float: right;
+	margin-left: 6px;
+	margin-right: 0;
+	margin-top: 0px;
+}
+
+.caret{
+	display: inline-block;
+	width: 0;
+	height: 0;
+	margin-top: 5px;
+	margin-left: 5px;
+	vertical-align: top;
+	border-top: 6px solid white;
+	border-left: 6px solid transparent;
+	border-right: 6px solid transparent;
+}
+
+.dropDownLink:hover .caret{
+	border-top-color: #1080dd;
+}
+
+/* -----------------------------------------------------
+
+------------------TOP NAVIGATION ENDS-------------------
+
+--------------------------------------------------------*/
+
+/* example of the layout center-fixer in action */
+#page{
+	background-color: whitesmoke;
+	width: 100%;
+	min-width: 845px;
+	padding: 36px 0 8px;
+	text-align: center;
+}
+
+/* -----------------------------------------------------
+
+------------------BANNER BEGINS-------------------------
+
+--------------------------------------------------------*/
+
+.banner{
+	position: relative;
+	width: 100%;
+	overflow: hidden;
+	background-color: white;
+	color: white;
+	height: 300px;
+	min-width: 845px;
+}
+
+.bannerWide{
+	position: absolute;
+	left: 50%;
+	height: 100%;
+	width: 1600px;
+	margin-left: -800px
+}
+
+#slides {
+	overflow: hidden;
+}
+
+#slides li{
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.mask{
+	position: absolute;
+	display: inline-block;
+	height: 100%;
+	width: 80px;
+	top: 0;
+	z-index: 1;
+}
+
+.maskLeft {
+	left: 0;
+	background: transparent url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmZmZmZmYiIHN0b3Atb3BhY2l0eT0iMCIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+	background-image: -moz-linear-gradient(left, white 0%, rgba(255, 255, 255, 0) 100%);
+	background-image: -webkit-linear-gradient(left, white 0%, rgba(255, 255, 255, 0) 100%);
+	background-image: -o-linear-gradient(left, white 0%, rgba(255, 255, 255, 0) 100%);
+	background-image: -ms-linear-gradient(left, white 0%, rgba(255, 255, 255, 0) 100%);
+	background-image: linear-gradient(to right, white 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+.maskRight{
+	right: 0;
+	background: transparent url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIwIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmZmZmZmYiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+	background-image: -moz-linear-gradient(left, rgba(255, 255, 255, 0) 0%, white 100%);
+	background-image: -webkit-linear-gradient(left, rgba(255, 255, 255, 0) 0%, white 100%);
+	background-image: -o-linear-gradient(left, rgba(255, 255, 255, 0) 0%, white 100%);
+	background-image: -ms-linear-gradient(left, rgba(255, 255, 255, 0) 0%, white 100%);
+	background-image: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, white 100%);
+}
+
+.bannerNormal{
+	position: absolute;
+	top: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.bannerPager a {
+	position: absolute;
+	z-index: 1;
+	top: 38%;
+	width: 52px;
+	height: 52px;
+	background-image: url("../img/navIcons.png");
+	cursor: pointer;
+}
+
+.bannerCentered {
+	width: 830px;
+	margin: 0 auto;
+	vertical-align: middle;
+	height: 100%;
+	position: relative;
+}
+
+.bannerHeading .large-button{
+	margin-top: 188px;
+}
+
+.pagerPrevious {
+	left: -72px;
+	background-position: 0 -455px;
+}
+
+.pagerPrevious:hover {
+	background-position: -60px -455px;
+}
+
+.pagerNext {
+	right: -72px;
+	background-position: -120px -455px;
+}
+
+.pagerNext:hover{
+	background-position: -180px -455px;
+}
+.bannerHeading {
+	top: 65px;
+	position: absolute;
+}
+
+#headings li {
+	position: absolute;
+}
+
+.bannerNormal h1 {
+	width: 560px;
+	font-size: 54px;
+	line-height: 55px;
+	font-weight: 700;
+	color: #141414;
+	text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+.bannerCaption{
+	position: absolute;
+	bottom: 0;
+	padding: 13px 0 9px;
+	color: white;
+	zoom: 1;
+}
+
+/* -----------------------------------------------------
+
+------------------BANNER ENDS---------------------------
+
+--------------------------------------------------------*/
+
+/* -----------------------------------------------------
+
+-------------MAIN PAGE HIGHLIGHTS BEGINS----------------
+
+--------------------------------------------------------*/
+
+.centeredHighlights{
+	display: inline-block;
+}
+
+.highlight{
+	float: left;
+	width: 203px;
+	margin-right: 28px;
+	margin-bottom: 28px;
+	-moz-box-shadow: 0px 0px 10px 1px #CCC;
+	-webkit-box-shadow: 0px 0px 10px 1px #CCC;
+	box-shadow: 0px 0px 10px 1px #CCC;
+	height: 320px;
+}
+
+.highlightImageContainer {
+	line-height: 0px;
+	position: relative;
+}
+
+.highlightTextContainer{
+	text-align: center;
+}
+
+.highlightTitles {
+	margin-bottom: 4px;
+}
+
+.highlightText{
+	height: 40px;
+}
+
+.highlightLink {
+	margin-top: 10px;
+	text-transform: uppercase;
+}
+
+/* -----------------------------------------------------
+
+-------------MAIN PAGE HIGHLIGHTS ENDS------------------
+
+--------------------------------------------------------*/
+
+.mainHeader{
+	height: 20px;
+}
+
+.headerCommon{
+	min-width: 815px;
+	background-color: #E285FF;
+	padding: 20px 15px;
+	margin-bottom: 25px;
+}
+
+.mainSubTitle{
+	padding-top: 0px;
+}
+
+.subTitleCommon{
+	display: block;
+	font-size: 12pt;
+	text-transform: uppercase;
+	color: white;
+}
+
+
+
+/* -----------------------------------------------------
+
+------------------FOOTER ENDS---------------------------
+
+--------------------------------------------------------*/
+
+.footer{
+	text-align: center;
+	bottom: 30px;
+	width: 100%;
+	color: white;
+	background-color: black;
+	height: 50px;
+	font-size:8pt;	
+	padding-top: 10px;
+	min-width: 845px;
+}
+
+.footer .naviLink{
+	display: inline;
+	padding-bottom: 0px;
+}
+
+/* -----------------------------------------------------
+
+------------------FOOTER ENDS---------------------------
+
+--------------------------------------------------------*/

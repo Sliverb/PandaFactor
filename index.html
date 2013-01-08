@@ -1,0 +1,229 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+	<title>Panda Factory</title>
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="robots" content="all" />
+	<meta name="author" content="Bayo Olatunji, Jaron Andre" />	
+	<meta name="description" content="My thoughts and everything else" />	
+	<meta name="keywords" content="" />	
+	<meta name="MSSmartTagsPreventParsing" content="true" />
+	
+	<!-- THE CSS -->
+	<link rel="stylesheet" type="text/css" href="css/PandaFactory.css"/> 
+	<link rel="stylesheet" type="text/css" href="css/RegSlide.css"/> 
+
+	<!-- THE SCRIPT -->
+	<!-- <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script> -->
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/fadeSlideShow.js"></script>
+	<script type="text/javascript">
+	jQuery(document).ready(function(){
+		jQuery('#slides').fadeSlideShow();
+	});
+	</script>	
+</head>
+
+<!-- THE BODY -->
+<body>
+	<div id="start-dom" class="default">
+	
+		<!-- The static black bar on the top of the page -->
+		<div class="tophub">
+			<div class="topnav">
+				<div class="container">
+					<div class="navLeft">
+						<a class="mainLogo" href="index.html">
+						</a>
+					</div> 
+					<!-- The left elements on the top bar -->
+
+					<!-- The right elements on the top bar -->
+					<ul class="navRight">		
+						<li class="litLab naviItem" style="display:none">
+							<a href="index.html" class="naviLogoLink naviLink">
+								<i class="naviImage"></i>
+								Hey <strong> Jaron </strong>
+							</a>
+						</li>	
+						<li class="dropDown naviItem" style="display:none">
+							<a class="dropDownLink naviLink" href="" id="AccountLink">
+								Account
+								<span class="caret"></span>
+							</a>					
+						</li>						
+						<li class="dropDown naviItem" style="display:none">
+							<a class="dropDownLink naviLink" href="" id="signInLink">
+								Sign in/up
+								<span class="caret"></span>
+							</a>					
+						</li>
+						<li class="dropDown naviItem" style="display:inherit">
+							<a class="dropDownLink naviLink" href="index.html" id="LanguageLink">
+								Language: <strong>English</strong>
+								<span class="caret"></span>
+							</a>					
+						</li>						
+					</ul>
+				</div>
+			</div>
+		</div>
+		
+		<div class="banner">
+			<div class="bannerWide">					
+					<ul id="slides">
+						<li><img src="img/slide4.jpg"/></li> <!-- This is the last image in the slideshow -->
+						<li><img src="img/slide3.jpg"/></li>
+						<li><img src="img/slide2.jpg"/></li>
+						<li><img src="img/slide1.jpg"/></li> <!-- This is the first image in the slideshow -->
+					</ul>
+					<span class="mask maskLeft"></span>
+					<span class="mask maskRight"></span>
+			</div>
+			<div class="bannerNormal">
+				<div class="bannerCentered">
+					<div class="bannerPager">
+						<a id="fssPrev" class="pagerPrevious"></a>
+						<a id="fssNext" class="pagerNext"></a>
+					</div>
+					<div class="bannerHeading">
+						<ul id="headings">
+							<li>
+								<h1>Intansheep <br> Blurp <br> 1</h1>
+							</li>
+						
+							<li>
+								<h1>Intansheep Blurp 2</h1>
+							</li>
+						
+							<li>
+								<h1>Intansheep Blurp <br> 3</h1>
+							</li>
+						
+							<li>
+								<h1>Intansheep <br> Blurp <br> 4</h1>
+							</li>
+							
+						</ul>
+					</div>
+					<div class="bannerCaption">
+						<div class="bannerCentered">
+							<p>
+								
+							</p>
+						</div>
+					</div>					
+				</div>
+			</div>			
+			<div class="clear"></div>				
+		</div>
+		
+		<div id="page">
+		
+			<div class="tabContent">
+				<div class="container">
+				<div class="centeredHighlights">
+					<div class="highlight ">
+						<div class="highlightImageContainer">
+							<a class="link3" href="Help/faq.php">
+								<img alt="" height="203" src="img/buss.png" width="203">
+							</a>
+						</div>
+						<div class="highlightTextContainer">
+							<div class="highlightTitles">
+								<a class="link3" href="Help/faq.php">
+									<h2 class="title3">Students</h2>
+								</a>
+							</div>
+							<p class="highlightText">
+								Land the perfect internships.
+							</p>					
+							<div class="highlightLink">
+								<a class="link3" href="Help/faq.php">Get started</a>
+							</div>
+						</div>
+					</div>
+					
+					<div class="highlight ">
+						<div class="highlightImageContainer">
+							<a class="link3" href="Tax/taxOverview.php">
+								<img alt="" height="203" src="img/indi.png" width="203">
+							</a>
+						</div>
+						<div class="highlightTextContainer">
+							<div class="highlightTitles">
+								<a class="link3" href="Tax/taxOverview.php">
+									<h2 class="title3">Schools</h2>
+								</a>
+							</div>
+							<p class="highlightText">
+								Great tools for your intern programs.
+							</p>					
+							<div class="highlightLink">
+								<a class="link3" href="Tax/taxOverview.php">Get started</a>
+							</div>
+						</div>
+					</div>
+					
+					<div class="highlight ">
+						<div class="highlightImageContainer">
+							<a class="link3" href="Help/faq.php#question2">
+								<img alt="" height="203" src="img/Features_LiveTiles.png" width="203">
+							</a>
+						</div>
+						<div class="highlightTextContainer">
+							<div class="highlightTitles">
+								<a class="link3" href="Help/faq.php#question2">
+									<h2 class="title3">Businesses</h2>
+								</a>
+							</div>
+							<p class="highlightText">
+								Post internships for <strong> FREE! </strong>
+							</p>				
+							<div class="highlightLink">
+								<a class="link3" href="Help/faq.php#question2">Get started</a>
+							</div>
+						</div>
+					</div>				
+				</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="clear">
+		</div>
+		
+		<div class="footer">
+			<div class="container">
+				<span>
+					<a class="naviLink"> About </a>
+				</span>
+				<span>
+					<a class="naviLink"> Help </a>
+				</span>
+				<span>
+					<a class="naviLink"> Blog </a>
+				</span>
+				<span>
+					<a class="naviLink"> Status </a>
+				</span>
+				<span>
+					<a class="naviLink"> Opportunities </a>
+				</span>
+				<span>
+					<a class="naviLink"> Terms </a>
+				</span>
+				<span>
+					<a class="naviLink"> Privacy </a>
+				</span>		
+				<span>
+					© 2012 Panda Factory
+				</span>								       
+			</div>
+		</div>
+	</div>
+</body>
+</html>
