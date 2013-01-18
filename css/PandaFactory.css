@@ -8,7 +8,8 @@ body{
 	font-family: "Segoe UI", Arial, Verdana, Geneva, Helvetica, sans-serif;
 	font-size:14px;
 	color: #000000;
-	background-color: black;
+	background-color: whitesmoke;
+	height: 100%;
 }
 
 /* -----------------------------------------------------
@@ -39,13 +40,50 @@ a:hover{
 	color: #0C5999;
 }
 
+
+input[type="email"], input[type="number"], input[type="password"], input[type="tel"], input[type="text"], input[type="url"] {
+	display: inline-block;
+	margin: 0;
+	padding: 0 8px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+input[type="checkbox"], input[type="radio"] {
+	-webkit-appearance: none;
+	appearance: none;
+	width: 14px;
+	height: 14px;
+	margin-top: 0;
+	cursor: pointer;
+	vertical-align: bottom;
+	background: white;
+	border: 1px solid #BABABA;
+	-webkit-border-radius: 1px;
+	-moz-border-radius: 1px;
+	border-radius: 1px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	position: relative;
+}
+
+select{
+	height: 32px;
+	padding: 5px;
+}
+
 .clear{
 	clear:both;
 }
 
 .inlineBlock{
-	position: relative;
 	display: inline-block;
+}
+
+.relative{
+	position: relative;
 }
 
 i{
@@ -55,8 +93,16 @@ i{
 	/*background: url(../img/twitter_web_sprite_icons.png) no-repeat 0px 0px;*/
 }
 
-.title3, .titleh2, .titleh3{
+.titleh2, .titleh3{
 	color: #1080DD;
+}
+
+.title3{
+	font-size: 22px;
+	font-weight: 500;
+	line-height: 28px;
+	color: #464646;
+	margin: 16px auto 0 auto;
 }
 
 .titleh2{
@@ -148,7 +194,8 @@ table{
 }
 
 #start-dom{
-	height: 100%;
+	min-height: 100%;
+	position: relative;
 }
 
 /* example of the layout center-fixer in action */
@@ -156,8 +203,47 @@ table{
 	background-color: whitesmoke;
 	width: 100%;
 	min-width: 845px;
-	/*padding: 36px 0 8px;*/
+	padding-bottom: 35px;
 	text-align: center;
+}
+
+.sectionDivider{
+	padding: 50px 0 0;
+	border-top: 2px solid #d0d0d0;
+}
+
+.actionButton{
+	display: inline-block;
+	color: white;
+	padding: 16px 39px;
+	box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.7);
+	font-weight: 500;
+	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+	border: none;
+	background-color: #E285FF;
+	background-image: -khtml-gradient(linear,left top,left bottom,from(#E285FF),to(#AF7BBF));
+	background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0%,#E285FF),color-stop(100%,#AF7BBF));
+	background-image: -moz-linear-gradient(top, #E285FF 0%, #AF7BBF 100%);
+	background-image: -webkit-linear-gradient(top, #E285FF 0%, #AF7BBF 100%);
+	background-image: -o-linear-gradient(top, #E285FF 0%, #AF7BBF 100%);
+	background-image: -ms-linear-gradient(top, #E285FF 0%, #AF7BBF 100%);
+	background-image: linear-gradient(to bottom, #E285FF 0%, #AF7BBF 100%);
+}
+
+.actionButton:hover{
+	color: white;
+	background-color: #AF7BBF;
+	background-image: -khtml-gradient(linear,left top,left bottom,from(#AF7BBF),to(#E285FF));
+	background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0%,#AF7BBF),color-stop(100%,#E285FF));
+	background-image: -moz-linear-gradient(top, #AF7BBF 0%, #E285FF 100%);
+	background-image: -webkit-linear-gradient(top, #AF7BBF 0%, #E285FF 100%);
+	background-image: -o-linear-gradient(top, #AF7BBF 0%, #E285FF 100%);
+	background-image: -ms-linear-gradient(top, #AF7BBF 0%, #E285FF 100%);
+	background-image: linear-gradient(to bottom, #AF7BBF 0%, #E285FF 100%);
+}
+
+.actionButton:visited{
+	color: white;
 }
 
 /* -----------------------------------------------------
@@ -194,7 +280,7 @@ table{
 	background-color: #E8E7E5;
 	font-size: 15px;
 	font-family: arial;
-	box-shadow: 0 -3px 4px rgba(0, 0, 0, 0.2) inset;
+	/*box-shadow: 0 -3px 4px rgba(0, 0, 0, 0.2) inset;*/
 	border-top: 1px solid #D0D0D0;
 	border-right: 1px solid #D0D0D0;
 	border-left: 1px solid #D0D0D0;
@@ -218,7 +304,7 @@ table{
 
 .tabContent{
 	padding: 36px 0 40px;
-	box-shadow: 0 -5px 16px rgba(0, 0, 0, 0.25);
+	/*box-shadow: 0 -5px 16px rgba(0, 0, 0, 0.25);*/
 }
 
 .tabMore{
@@ -423,7 +509,7 @@ table{
 	position: relative;
 }
 
-.bannerHeading .large-button{
+.bannerHeading {
 	margin-top: 188px;
 }
 
@@ -532,9 +618,9 @@ table{
 	width: 203px;
 	margin-right: 28px;
 	margin-bottom: 28px;
-	-moz-box-shadow: 0px 0px 10px 1px #CCC;
+	/*-moz-box-shadow: 0px 0px 10px 1px #CCC;
 	-webkit-box-shadow: 0px 0px 10px 1px #CCC;
-	box-shadow: 0px 0px 10px 1px #CCC;
+	box-shadow: 0px 0px 10px 1px #CCC;*/
 	height: 320px;
 }
 
@@ -568,30 +654,18 @@ table{
 
 /* -----------------------------------------------------
 
-------------------SIGN UP ELEMENT BEGINS-----------------
-
---------------------------------------------------------*/
-
-.signUp{
-	float: left;
-	width: 495px;
-}
-
-/* -----------------------------------------------------
-
---------------SIGN UP ELEMENT ENDS----------------------
-
---------------------------------------------------------*/
-
-/* -----------------------------------------------------
-
-------------------SIGN IN ELEMENT BEGINS-----------------
+--------------SIGN IN/UP ELEMENT BEGINS-----------------
 
 --------------------------------------------------------*/
 
 .signIn{
 	float: left;
 	width: 335px;
+}
+
+.signUp{
+	float: left;
+	width: 495px;
 }
 
 .signInBoxH2{
@@ -612,7 +686,7 @@ table{
 	line-height: 17px;
 }
 
-.signInBox {
+.signInBox, .signUpBox {
 	padding-top: 16px;
 }
 
@@ -624,7 +698,12 @@ table{
 	display: block;
 }
 
-.loginEmailLabel, .loginPasswdLabel {
+
+.signUpBox{
+	width: 335px;
+}
+
+.loginEmailLabel, .loginPasswdLabel , .signupFNameLabel, .signupLNameLabel, .signupEmailLabel, .signupPasswdLabel, .signupBdayLabel{
 	margin: 0 0 .5em;
 	display: block;
 	-webkit-user-select: none;
@@ -640,34 +719,6 @@ table{
 	color: #212121;
 	border: 1px solid #BABABA;
 	background-color: rgba(255, 255, 255, 0.8);
-}
-
-input[type="email"], input[type="number"], input[type="password"], input[type="tel"], input[type="text"], input[type="url"] {
-	display: inline-block;
-	margin: 0;
-	padding: 0 8px;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
-}
-
-input[type="checkbox"], input[type="radio"] {
-	-webkit-appearance: none;
-	appearance: none;
-	width: 14px;
-	height: 14px;
-	margin-top: 0;
-	cursor: pointer;
-	vertical-align: bottom;
-	background: white;
-	border: 1px solid #BABABA;
-	-webkit-border-radius: 1px;
-	-moz-border-radius: 1px;
-	border-radius: 1px;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
-	position: relative;
 }
 
 .signInBox input[type="button"], .signInBox input[type="submit"]{
@@ -700,6 +751,23 @@ input[type="checkbox"], input[type="radio"] {
 	user-select: none;
 }
 
+.signupFNameDiv, .signupLNameDiv {
+	width: 160px;
+	display: inline-block;
+}
+
+.signupFNameDiv {
+	padding-right: 5px;
+}
+
+.signupLNameDiv {
+	padding-left: 5px;
+}
+
+.signupTerms{
+	font-size: 11px;
+}
+
 /* -----------------------------------------------------
 
 --------------SIGN IN ELEMENT ENDS----------------------
@@ -711,7 +779,7 @@ input[type="checkbox"], input[type="radio"] {
 ------------------FOOTER ENDS---------------------------
 
 --------------------------------------------------------*/
-
+/*
 .footer{
 	text-align: center;
 	bottom: 30px;
@@ -722,11 +790,27 @@ input[type="checkbox"], input[type="radio"] {
 	font-size:8pt;	
 	padding-top: 10px;
 	min-width: 845px;
+	border-top: 1px solid #ebebeb;
+}
+*/
+
+.footer{
+	border-top: 1px solid #ebebeb;
+	bottom: 0;
+	text-align: center;
+	width: 100%;
+	color: #6c6d6c;
+	height: 35px;
+	font-size: 8pt;
+	padding-top: 10px;
+	min-width: 845px;
+	position: absolute;
 }
 
 .footer .naviLink{
 	display: inline;
 	padding-bottom: 0px;
+	color: #6c6d6c;
 }
 
 /* -----------------------------------------------------

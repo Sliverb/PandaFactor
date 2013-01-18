@@ -2,7 +2,7 @@
 
 <html>
 <head>
-	<title>Taxes 2 Go</title>
+	<title>Intansheep</title>
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
@@ -89,41 +89,128 @@
 			
 			<div class="tabContent">
 				<div class="container tabMore">
-					<div class="signUp">			
-						<div class="signinBox">
-							<h2>Sign in </h2>
-							<form novalidate="" id="iSheepLoginForm" action="" method="post">
+				
+					<div class="signUp">	
+						<h2 class="signInBoxH2">Sign Up </h2>				
+						<div class="signInBox signUpBox">
+							<form novalidate="" id="iSheepSignupForm" action="" method="post">
 								<input type="hidden" name="service" id="service" value="">
 								<input type="hidden" name="language" id="language" value="">
 								<input type="hidden" id="_utf8" name="_utf8" value="?">
-								<div class="loginEmailDiv">
-									<label for="Email"><strong class="loginEmailLabel">Username</strong></label>
-									<input type="email" spellcheck="false" name="Email" id="loginEmail" value="">
+								<div class="signupFNameDiv">
+									<label for="Email"><span class="signupFNameLabel">First Name</span></label>
+									<input type="email" spellcheck="false" name="firstName" id="firstName" value="">
 								</div>
-								<div class="loginPasswdDiv">
-									<label for="Passwd"><strong class="loginPasswdLabel">Password</strong></label>
-									<input type="password" name="Passwd" id="loginPasswd">
+								
+								<div class="signupLNameDiv">
+									<label for="Email"><span class="signupLNameLabel">Last Name</span></label>
+									<input type="email" spellcheck="false" name="lastName" id="lastName" value="">
+								</div>			
+								<div class="signupEmailDiv">
+									<label for="Email"><span class="signupEmailLabel">Email</span></label>
+									<input type="email" spellcheck="false" name="sEmail" id="signupEmail" value="">
 								</div>
-								<input type="submit" class="isButton isButtonSubmit" name="signIn" id="signIn" value="Sign in">
-								<label class="remember" onclick="">
+								<div class="signupEmailDiv">
+									<label for="Email"><span class="signupEmailLabel">Re-enter Email</span></label>
+									<input type="email" spellcheck="false" name="reSEmail" id="reSignupEmail" value="">
+								</div>
+								
+								<div class="signupPasswdDiv">
+									<label for="Passwd"><span class="signupPasswdLabel">Password</span></label>
+									<input type="password" name="Passwd" id="signUpPasswd">
+								</div>
+
+								<div class="signupBirthdayDiv inlineBlock">
+									<label for="Birthday"><span class="signupBdayLabel">Birthday</span></label>
+									<span class="signupBirthdayChoices">
+										<select name="birthdayMonth" id="birthdayMonth" aria-label="Month" onchange="">
+											<option value="-1">Month:</option>
+											<option value="1">Jan</option>
+											<option value="2">Feb</option>
+											<option value="3">Mar</option>
+											<option value="4">Apr</option>
+											<option value="5">May</option>
+											<option value="6">Jun</option>
+											<option value="7">Jul</option>
+											<option value="8">Aug</option>
+											<option value="9">Sep</option>
+											<option value="10">Oct</option>
+											<option value="11">Nov</option>
+											<option value="12">Dec</option>
+										</select> 
+										<select name="birthdayDay" id="birthdayDay" aria-label="Day" class="">
+											<option value="-1">Day:</option>
+											<option value="1">1</option>
+											<option value="2">2</option>
+											<option value="3">3</option>
+											<option value="4">4</option>
+											<option value="5">5</option>
+											<option value="6">6</option>
+											<option value="7">7</option>
+											<option value="8">8</option>
+											<option value="9">9</option>
+											<option value="10">10</option>
+											<option value="11">11</option>
+											<option value="12">12</option>
+											<option value="13">13</option>
+											<option value="14">14</option>
+											<option value="15">15</option>
+											<option value="16">16</option>
+											<option value="17">17</option>
+											<option value="18">18</option>
+											<option value="19">19</option>
+											<option value="20">20</option>
+											<option value="21">21</option>
+											<option value="22">22</option>
+											<option value="23">23</option>
+											<option value="24">24</option>
+											<option value="25">25</option>
+											<option value="26">26</option>
+											<option value="27">27</option>
+											<option value="28">28</option>
+											<option value="29">29</option>
+											<option value="30">30</option>
+											<option value="31">31</option>
+										</select>
+										<select name="birthdayYear" id="birthdayYear" aria-label="Year" class="" onchange="">
+											<option value="-1">Year:</option>
+											<option value="2013">2013</option>
+											<option value="2012">2012</option>
+											<option value="2011">2011</option>
+											<option value="2010">2010</option>
+											<option value="2009">2009</option>
+											<option value="2008">2008</option>	
+										</select>
+									</span>
+								</div>
+								
+								<div class="signupGenderDiv inlineBlock">
+									<label for="Gender"><span class="signupBdayLabel">Gender</span></label>
+									<select name="sexOption" id="sexOption" aria-label="sex" class="" onchange="">
+										<option value="-1">Gender:</option>
+										<option value="2013">Female</option>
+										<option value="2012">Male</option>
+									</select>
+								</div>								
+								
+								<div class="signupTermsDiv">
+									<Span class="signupTerms">
+										By clicking the sign up button, you agree to our <a href="#" ajaxify="/help/ajax/reg_birthday" title="Click for more information" rel="async">terms</a>
+									</Span>
+								</div>								
+								<input type="submit" class="isButton isButtonSubmit" name="signUp" id="signUp" value="Sign Up">
+								<label class="loginRememberLabel" onclick="">
 									<input type="checkbox" name="PersistentCookie" id="PersistentCookie" value="yes">
-									<strong class="loginLememberLabel">
-										Stay signed in
-									</strong>
-								</label>
+									<span class="loginRemember">
+										Keep me signed in
+									</span>
+								</label>						
 							</form>
-							<ul>
-								<li>
-									<a id="link-forgot-pass	wd" href="https://accounts.google.com/RecoverAccount?service=mail&amp;continue=https%3A%2F%2Fmail.google.com%2Fmail%2F" target="_top">
-									Can't access your account?
-									</a>
-								</li>
-							</ul>
 						</div>
 					</div>	
 				
 					<div class="signIn">
-						<h2 class="signInBoxH2">Sign in </h2>
+						<h2 class="signInBoxH2">Sign In </h2>
 						<a href="">
 						<img class="fbSignIn" src="../img/fblogin.png">
 						</a>
@@ -151,7 +238,7 @@
 									<label for="Passwd"><span class="loginPasswdLabel">Password</span></label>
 									<input type="password" name="Passwd" id="loginPasswd">
 								</div>
-								<input type="submit" class="isButton isButtonSubmit" name="signIn" id="signIn" value="Sign in">
+								<input type="submit" class="isButton isButtonSubmit" name="signIn" id="signIn" value="Sign In">
 								<label class="loginRememberLabel" onclick="">
 									<input type="checkbox" name="PersistentCookie" id="PersistentCookie" value="yes">
 									<span class="loginRemember">
