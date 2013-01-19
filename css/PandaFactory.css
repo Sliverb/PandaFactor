@@ -1,7 +1,11 @@
-html, body, div, h1, h2, h3, h4, h5, h6, p, img, dl, dt, dd, ol, ul, li, table, caption, tbody, tfoot, thead, tr, th, td, form, fieldset, embed, object, applet, .searchBlock{
+html, body, div, h1, h2, h3, h4, h5, h6, p, img, dl, dt, dd, ol, ul, li, table, caption, tbody, tfoot, thead, tr, th, td, form, fieldset, embed, object, applet{
 	margin: 0;
 	padding: 0;
 	border: 0;
+}
+
+html, body{
+	height: 100%;
 }
 
 body{
@@ -9,7 +13,6 @@ body{
 	font-size:14px;
 	color: #000000;
 	background-color: whitesmoke;
-	height: 100%;
 }
 
 /* -----------------------------------------------------
@@ -214,13 +217,23 @@ table{
 
 .actionButton{
 	display: inline-block;
-	color: white;
 	padding: 16px 39px;
 	box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.7);
 	font-weight: 500;
 	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
 	border: none;
 	background-color: #E285FF;
+}
+
+.actionButton:hover{
+	background-color: #AF7BBF;
+}
+
+.actionButton, .actionButton:hover,.actionButton:visited{
+	color: white;
+}
+
+.buttonGradient{
 	background-image: -khtml-gradient(linear,left top,left bottom,from(#E285FF),to(#AF7BBF));
 	background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0%,#E285FF),color-stop(100%,#AF7BBF));
 	background-image: -moz-linear-gradient(top, #E285FF 0%, #AF7BBF 100%);
@@ -230,9 +243,7 @@ table{
 	background-image: linear-gradient(to bottom, #E285FF 0%, #AF7BBF 100%);
 }
 
-.actionButton:hover{
-	color: white;
-	background-color: #AF7BBF;
+.buttonGradient:hover{
 	background-image: -khtml-gradient(linear,left top,left bottom,from(#AF7BBF),to(#E285FF));
 	background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0%,#AF7BBF),color-stop(100%,#E285FF));
 	background-image: -moz-linear-gradient(top, #AF7BBF 0%, #E285FF 100%);
@@ -240,10 +251,6 @@ table{
 	background-image: -o-linear-gradient(top, #AF7BBF 0%, #E285FF 100%);
 	background-image: -ms-linear-gradient(top, #AF7BBF 0%, #E285FF 100%);
 	background-image: linear-gradient(to bottom, #AF7BBF 0%, #E285FF 100%);
-}
-
-.actionButton:visited{
-	color: white;
 }
 
 /* -----------------------------------------------------
@@ -660,12 +667,12 @@ table{
 
 .signIn{
 	float: left;
-	width: 335px;
+	width: 345px;
 }
 
 .signUp{
 	float: left;
-	width: 495px;
+	width: 485px;
 }
 
 .signInBoxH2{
