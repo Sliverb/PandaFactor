@@ -1,12 +1,12 @@
 Panda Factory
 
 Source code layout:
-[Design Mockups]
-  Houses early design mockups I'm too afraid to delete.
 [InternNest]
   All the source code for the project
 [env]
   Virtualenv files. This directory is largely ignorable. 
+[Mockups]
+  Home to our early design mockups I'm too afraid to delete.
 
 Getting started:
 1) Get the virtual envornment running
