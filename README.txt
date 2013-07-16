@@ -20,4 +20,4 @@ To stop using virtualenv, type "deactivate"
 Tech Stack:
 - Django 1.5.1
 
-© 2013 Siamese Cities
+© 2013 Siamese Cities (http://www.youtube.com/watch?v=JaAKewFIIv8)
