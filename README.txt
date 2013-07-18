@@ -13,7 +13,7 @@ Getting started:
     env\Scripts\activate
 To stop using virtualenv, type "deactivate"
 2) Start the server
-    InternNest\manager.py runserver
+    InternNest\manage.py runserver
 3) In a web browser, visit:
     http://127.0.0.1:8000/admin/
 

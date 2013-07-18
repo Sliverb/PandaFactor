@@ -23,6 +23,7 @@ SECRET_KEY = '58i6%0t^@7^4pt9@6!0xw6xc03oqvdw%ywzwsi)k_29orepe4q'
 DEBUG = True
 
 TEMPLATE_DEBUG = True
+TEMPLATE_DIRS = [os.path.join(BASE_DIR, 'templates')]
 
 ALLOWED_HOSTS = []
 
@@ -30,12 +31,16 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = (
+    #Django models
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    
+    # Our models
+    'RegisterBusiness',
 )
 
 MIDDLEWARE_CLASSES = (

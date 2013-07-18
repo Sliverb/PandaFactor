@@ -1,0 +1,17 @@
+<h1>
+  Register your business
+</h1>
+
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+
+<form action="{% url 'business:create' %}" method="post">
+{% csrf_token %}
+    Business name:
+    <input type="text" name="name"/> <br>
+    
+    Email:
+    <input type="email" name="email"/><br>
+    
+    <input type="submit" value="Register"/>
+</form>
