@@ -23,13 +23,9 @@ SECRET_KEY = '58i6%0t^@7^4pt9@6!0xw6xc03oqvdw%ywzwsi)k_29orepe4q'
 DEBUG = True
 
 TEMPLATE_DEBUG = True
-<<<<<<< HEAD
-TEMPLATE_DIRS = [os.path.join(BASE_DIR, 'templates')]
-=======
 TEMPLATE_DIRS = (
     os.path.join(BASE_DIR, 'templates'),
 )
->>>>>>> Start the interface for registering a business.
 
 ALLOWED_HOSTS = []
 
@@ -46,10 +42,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     
     # Our models
-<<<<<<< HEAD
-=======
     'HomePage',
->>>>>>> Start the interface for registering a business.
     'RegisterBusiness',
 )
 
@@ -94,4 +87,11 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/dev/howto/static-files/
 
-STATIC_URL = '/static/'
+# Tells Django to look for a static content folder in each app
+STATIC_URL = '/static/' 
+
+# Tells Django to look in the following paths for project-wide static content
+STATICFILES_DIRS = ( 
+    os.path.join(BASE_DIR, "static"),
+)
+
