@@ -44,6 +44,7 @@ INSTALLED_APPS = (
     # Our models
     'HomePage',
     'RegisterBusiness',
+    'RegisterUser',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -95,3 +96,5 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "static"),
 )
 
+# Tell Django to use our custom user model
+AUTH_USER_MODEL = 'RegisterUser.InternNestUser'
