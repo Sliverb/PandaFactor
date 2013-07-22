@@ -27,6 +27,6 @@ To stop using virtualenv, type "deactivate"
 Tech Stack:
 - Django 1.5.1
 - Python 2.7.5
-- JQuery 2.0.3 (doesn't support IE 8 and below)
+- JQuery 1.10.2
 
 © 2013 Siamese Cities
