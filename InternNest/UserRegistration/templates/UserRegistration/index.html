@@ -1,0 +1,9 @@
+{% if businesses_list %}
+    <ul>
+    {% for business in businesses_list %}
+        <li><a href="/business/view/{{ business.pk }}/">{{ business.name }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p> No businesses are in the database. </p>
+{% endif %}
