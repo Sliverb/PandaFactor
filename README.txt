@@ -1,5 +1,3 @@
-Panda Factory
-
 Source code layout:
 [InternNest] Source code for the project
    \--- [HomePage] Application for the home page
@@ -22,11 +20,9 @@ To stop using virtualenv, type "deactivate"
 2) Start the server
     InternNest\manage.py runserver
 3) In a web browser, visit:
-    http://127.0.0.1:8000/register/business/
+    http://127.0.0.1:8000/
 
 Tech Stack:
 - Django 1.5.1
 - Python 2.7.5
 - JQuery 1.10.2
-
-© 2013 Siamese Cities
