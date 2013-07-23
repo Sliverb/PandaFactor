@@ -1,8 +1,8 @@
-from django.template.loader import get_template
-from django.template import Context
-from django.http import HttpResponse
+from django.shortcuts import render
 
 def index(request):    
-    t = get_template('base.html')
-    html = t.render(Context({'test_message': 'This is a test message'}))
-    return HttpResponse(html)
+    context = {
+        'test_message': "Content from \\InternNest\\HomePage\\views.py but used in \\InternNest\\templates\\base.html",
+        'context_message': "This string is used in \\InternNest\\HomePage\\templates\\HomePage\\body.html",
+    }
+    return render(request, 'HomePage/body.html', context)

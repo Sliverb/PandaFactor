@@ -16,9 +16,9 @@
         <tr>
           <td style="vertical-align:bottom;">
             <a href="/">
-              <div id="headerTitle">
+              <span id="headerTitle">
                 Intern Nest
-              </div>
+              </span>
             </a>
           </td>
           <td style="vertical-align:bottom;">
@@ -30,13 +30,17 @@
       </table>
     </div>
 
-    {{ test_message }}
+    <div style="text-align:center;">
+      {{ test_message }}
+    </div>
     
+    <div>
     {% block content %}
       <br>
       <br>
       This is the default content. This content can be overridden by any child template that overrides the "content" block.
     {% endblock %}
+    <div>
     
 </body>
 </html>
