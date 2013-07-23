@@ -5,10 +5,10 @@
   Sign Up
 </h1>
 
-{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+{% if error_message %}<p><span style="color:red;">{{ error_message }} </span></p>{% endif %}
 
 
-<form action="{% url 'UserRegistration:createBusinessUser' %}" method="post">
+<form action="{% url 'UserRegistration:registerBusinessUser' %}" method="post">
 {% csrf_token %}
     First Name <br>
     <div id="idDiv_PWD_UsernameTb" style="position:relative; width:100%;">

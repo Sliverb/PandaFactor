@@ -1,12 +1,14 @@
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, PermissionsMixin
 from django.db import models
 
-# Possible user type mask values
-UTM_BUSINESS = 1
-UTM_SCHOOL = 2
-UTM_STUDENT = 4
-UTM_MAXVALUE = (UTM_BUSINESS | UTM_SCHOOL | UTM_STUDENT)
+# Enum of possible user type mask values
+class UserTypeMasks:
+    Business = 1
+    School   = 2
+    Student  = 4
+    MaxValue = (Business | School | Student)
 
+    
 class InternNestUserManager(BaseUserManager):
     def create_user(self, first_name, last_name, date_of_birth, email, user_type_mask, password):
         if not first_name:
@@ -17,7 +19,7 @@ class InternNestUserManager(BaseUserManager):
             raise ValueError('Users must have a date of birth')
         if not email:
             raise ValueError('Users must have an email address')
-        if (user_type_mask <= 0 or user_type_mask > UTM_MAXVALUE):
+        if (user_type_mask <= 0 or user_type_mask > UserTypeMasks.MaxValue):
             raise ValueError('Users must have a valid user type')
 
         user = self.model(
