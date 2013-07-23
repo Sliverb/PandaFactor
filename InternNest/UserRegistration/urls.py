@@ -3,6 +3,6 @@ from UserRegistration import views
 
 urlpatterns = patterns('',
   url(r'^business/$', views.registerBusinessUser, name='registerBusinessUser'),
-  # url(r'^school/$', views.registerSchoolUser, name='registerSchool'),
-  # url(r'^student/$', views.registerStudentUser, name='registerStudent'),
+  url(r'^school/$', views.registerSchoolUser, name='registerSchoolUser'),
+  url(r'^student/$', views.registerStudentUser, name='registerStudentUser'),
 )

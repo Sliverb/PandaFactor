@@ -9,22 +9,40 @@ from UserRegistration.models import InternNestUserManager, UserTypeMasks
  
 
 def registerBusinessUser(request):
+    return registerUserShared(request, 'UserRegistration/register.html', UserTypeMasks.Business)
+
+    
+def registerSchoolUser(request):
+    return registerUserShared(request, 'UserRegistration/register.html', UserTypeMasks.School)
+
+
+def registerStudentUser(request):
+    return registerUserShared(request, 'UserRegistration/register.html', UserTypeMasks.Student)
+    
+    
+def registerUserShared(request, url, userType):
     if (request.method == 'POST'):
         try:
             firstName = request.POST['firstName']
             if not firstName:
                 raise KeyError
         except (KeyError):
-            context = {'error_message': 'you didn\'t specify a first name'}
-            return render(request, 'UserRegistration/register.html', context)
+            context = {
+                'error_message': 'you didn\'t specify a first name',
+                'current_url': request.path,
+            }
+            return render(request, url, context)
 
         try:
             lastName = request.POST['lastName']
             if not lastName:
                 raise KeyError
         except (KeyError):
-            context = {'error_message': 'you didn\'t specify a last name'}
-            return render(request, 'UserRegistration/register.html', context)    
+            context = {
+                'error_message': 'you didn\'t specify a last name',
+                'current_url': request.path,
+            }
+            return render(request, url, context)    
             
         try:
             email = request.POST['email']
@@ -32,8 +50,11 @@ def registerBusinessUser(request):
                 raise KeyError
             email = email.lower()
         except (KeyError):
-            context = {'error_message': 'you didn\'t specify an email'}
-            return render(request, 'UserRegistration/register.html', context)
+            context = {
+                'error_message': 'you didn\'t specify an email',
+                'current_url': request.path,
+            }
+            return render(request, url, context)
             
         try:
             email2 = request.POST['email2']
@@ -41,38 +62,56 @@ def registerBusinessUser(request):
                 raise KeyError
             email2 = email2.lower()
         except (KeyError):
-            context = {'error_message': 'you didn\'t re-enter your email'}
-            return render(request, 'UserRegistration/register.html', context)
+            context = {
+                'error_message': 'you didn\'t re-enter your email',
+                'current_url': request.path,
+            }
+            return render(request, url, context)
       
         if (email != email2):
-            context = {'error_message': 'the entered emails don\'t match'}
-            return render(request, 'UserRegistration/register.html', context)
+            context = {
+                'error_message': 'the entered emails don\'t match',
+                'current_url': request.path,
+            }
+            return render(request, url, context)
 
         try:
             password = request.POST['password']
             if not password:
                 raise KeyError
         except (KeyError):
-            context = {'error_message': 'you didn\'t specify a password'}
-            return render(request, 'UserRegistration/register.html', context)
+            context = {
+                'error_message': 'you didn\'t specify a password',
+                'current_url': request.path,
+            }
+            return render(request, url, context)
             
         try:
             password2 = request.POST['password2']
             if not password2:
                 raise KeyError
         except (KeyError):
-            context = {'error_message': 'you didn\'t re-enter your password'}
-            return render(request, 'UserRegistration/register.html', context)
+            context = {
+                'error_message': 'you didn\'t re-enter your password',
+                'current_url': request.path,
+            }
+            return render(request, url, context)
             
         if (password != password2):
-            context = {'error_message': 'the entered passwords don\'t match'}
-            return render(request, 'UserRegistration/register.html', context)  
+            context = {
+                'error_message': 'the entered passwords don\'t match',
+                'current_url': request.path,
+            }
+            return render(request, url, context)  
         
         # Check if the user already exists
         alreadyExists = get_user_model().objects.filter(email=email).count()
         if (alreadyExists):
-            context = {'error_message': 'that email is already registered to a user'}
-            return render(request, 'UserRegistration/register.html', context)  
+            context = {
+                'error_message': 'that email is already registered to a user',
+                'current_url': request.path,
+            }
+            return render(request, url, context)  
         
         # Creates and saves the new user object
         get_user_model().objects.create_user(
@@ -80,7 +119,7 @@ def registerBusinessUser(request):
             last_name = lastName,
             email = email,
             date_of_birth = date.today(),
-            user_type_mask = UserTypeMasks.Business,
+            user_type_mask = userType,
             password = password,
         )
         
@@ -89,15 +128,5 @@ def registerBusinessUser(request):
         # user hits the Back button.
         return HttpResponseRedirect('/admin/')
     else:
-        context = {}
-        return render(request, 'UserRegistration/register.html', context)
-    
-    
-'''
-def registerSchoolUser(request):
-    return HttpResponse("Register school needs implementing.")
-
-
-def registerStudentUser(request):
-    return HttpResponse("Register Student needs implementing.")
-'''
+        context = {'current_url': request.path}
+        return render(request, url, context)

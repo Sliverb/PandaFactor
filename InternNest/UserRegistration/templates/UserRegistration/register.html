@@ -8,7 +8,7 @@
 {% if error_message %}<p><span style="color:red;">{{ error_message }} </span></p>{% endif %}
 
 
-<form action="{% url 'UserRegistration:registerBusinessUser' %}" method="post">
+<form action="{{ current_url }}" method="post">
 {% csrf_token %}
     First Name <br>
     <div id="idDiv_PWD_UsernameTb" style="position:relative; width:100%;">
