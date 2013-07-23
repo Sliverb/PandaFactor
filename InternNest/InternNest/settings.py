@@ -43,6 +43,7 @@ INSTALLED_APPS = (
     
     # Our models
     'HomePage',
+    'Profile',
     'RegisterBusiness',
     'UserRegistration',
 )
