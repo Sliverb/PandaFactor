@@ -20,7 +20,7 @@ class InternNestUserManager(BaseUserManager):
         if not email:
             raise ValueError('Users must have an email address')
         if (user_type_mask <= 0 or user_type_mask > UserTypeMasks.MaxValue):
-            raise ValueError('Users must have a valid user type')
+            raise ValueError('Users must have a valid user type. ' + user_type_mask + ' is not supported')
 
         user = self.model(
             first_name = first_name,

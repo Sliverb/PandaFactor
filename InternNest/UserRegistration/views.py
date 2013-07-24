@@ -56,7 +56,7 @@ def registerUser(request):
         return HttpResponseRedirect('/profile/')
         
     if (request.method == 'POST'):
-        return registerUserShared(request, 'UserRegistration/register.html', request.POST['userType'])
+        return registerUserShared(request, 'UserRegistration/register.html', int(request.POST['userType']))
     else:
         return render(request, 'UserRegistration/register.html', {'user_type': UserTypeMasks.Student})
 
