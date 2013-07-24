@@ -23,7 +23,11 @@
           </td>
           <td style="vertical-align:bottom;">
             <div id="headerUserProfile">
-              <a href="/register/student/"> register </a> or login
+              {% if user.is_authenticated %}
+                <a href="/profile/"> {{ user.first_name }} </a> &#8195;<a href="/register/logout/"> logout </a>
+              {% else %}
+                <a href="/register/student/"> register or login </a>
+              {% endif %}
             </div>
           </td>
         </tr>

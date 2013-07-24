@@ -1,54 +1,93 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1>
-  Sign Up
-</h1>
 
-{% if error_message %}<p><span style="color:red;">{{ error_message }} </span></p>{% endif %}
+<div style="float:left;">
+  <h1>
+    Sign Up
+  </h1>
+
+  {% if register_error_message %}<p><span style="color:red;">{{ register_error_message }} </span></p>{% endif %}
 
 
-<form action="{{ current_url }}" method="post">
-{% csrf_token %}
-    First Name <br>
-    <div id="idDiv_PWD_UsernameTb" style="position:relative; width:100%;">
-      <div class="textboxPlaceholder"> First </div>
-      <input class="textboxWithPlaceholder" type="text" name="firstName"/>
-    </div>
-    
-    Last Name <br>
-    <div id="idDiv_PWD_UsernameTb" style="position:relative; width:100%;">
-      <div class="textboxPlaceholder"> Last </div>
-      <input class="textboxWithPlaceholder" type="text" name="lastName"/>
-    </div>
-    
-    Email <br>
-    <div id="idDiv_PWD_UsernameTb" style="position:relative; width:100%;">
-      <div class="textboxPlaceholder"> someone@example.com </div>
-      <input class="textboxWithPlaceholder" type="email" name="email" maxlength="113"/>
-    </div>
-    
-    Re-enter Email <br>
-    <div id="idDiv_PWD_UsernameTb" style="position:relative; width:100%;">
-      <div class="textboxPlaceholder"> someone@example.com </div>
-      <input class="textboxWithPlaceholder" type="email" name="email2" maxlength="113"/>
-    </div>
-    
-    Password <br>
-    <div id="idDiv_PWD_UsernameTb" style="position:relative; width:100%;">
-      <div class="textboxPlaceholder"> Password </div>
-      <input class="textboxWithPlaceholder" type="password" name="password" maxlength="16"/>
-    </div>
+  <form action="/register/" method="post">
+  {% csrf_token %}
+      First Name <br>
+      <div id="idDiv_PWD_UsernameTb" style="position:relative; width:100%;">
+        <div class="textboxPlaceholder"> First </div>
+        <input class="textboxWithPlaceholder" type="text" name="firstName" value="{{ first_name }}"/>
+      </div>
+      
+      Last Name <br>
+      <div id="idDiv_PWD_UsernameTb" style="position:relative; width:100%;">
+        <div class="textboxPlaceholder"> Last </div>
+        <input class="textboxWithPlaceholder" type="text" name="lastName" value="{{ last_name }}"/>
+      </div>
+      
+      Email <br>
+      <div id="idDiv_PWD_UsernameTb" style="position:relative; width:100%;">
+        <div class="textboxPlaceholder"> someone@example.com </div>
+        <input class="textboxWithPlaceholder" type="email" name="email" maxlength="113" value="{{ email }}"/>
+      </div>
+      
+      Re-enter Email <br>
+      <div id="idDiv_PWD_UsernameTb" style="position:relative; width:100%;">
+        <div class="textboxPlaceholder"> someone@example.com </div>
+        <input class="textboxWithPlaceholder" type="email" name="email2" maxlength="113" value="{{ email2 }}"/>
+      </div>
+      
+      Password <br>
+      <div id="idDiv_PWD_UsernameTb" style="position:relative; width:100%;">
+        <div class="textboxPlaceholder"> Password </div>
+        <input class="textboxWithPlaceholder" type="password" name="password" maxlength="16"/>
+      </div>
 
-    Re-enter Password <br>
-    <div id="idDiv_PWD_UsernameTb" style="position:relative; width:100%;">
-      <div class="textboxPlaceholder"> Password </div>
-      <input class="textboxWithPlaceholder" type="password" name="password2" maxlength="16"/>
-    </div>
-    
-    By clicking the sign up button, you agree to our <a href="#"> terms</a> <br>
-    <input type="submit" value="Sign Up"/>
-</form>
+      Re-enter Password <br>
+      <div id="idDiv_PWD_UsernameTb" style="position:relative; width:100%;">
+        <div class="textboxPlaceholder"> Password </div>
+        <input class="textboxWithPlaceholder" type="password" name="password2" maxlength="16"/>
+      </div>
+      
+      By clicking the sign up button, you agree to our <a href="#">terms</a> <br>
+      <input type="submit" value="Sign Up"/>
+      
+      
+      <input type="hidden" name="userType" id="userType" value="{{ user_type }}" />
+  </form>
+</div>
+
+<div style="float:left; margin-left:60px;">
+  <h1>
+    Login
+  </h1>
+  
+  {% if login_error_message %}
+    <p><span style="color:red;">
+      {{ login_error_message }}
+    </span></p>
+  {% endif %}
+  
+  <form action="/register/login/" method="post">
+  {% csrf_token %}
+      Email <br>
+      <div id="idDiv_PWD_UsernameTb" style="position:relative; width:100%;">
+        <div class="textboxPlaceholder"> someone@example.com </div>
+        <input class="textboxWithPlaceholder" type="email" name="email" maxlength="113"/>
+      </div>
+      
+      Password <br>
+      <div id="idDiv_PWD_UsernameTb" style="position:relative; width:100%;">
+        <div class="textboxPlaceholder"> Password </div>
+        <input class="textboxWithPlaceholder" type="password" name="password" maxlength="16"/>
+      </div>
+      
+      <input type="submit" value="Sign in"/>
+      
+      <input type="hidden" name="userType" id="userType" value="{{ user_type }}" />
+  </form>
+  
+</div>
+<div class="clear"></div>  
 
 {% endblock %}
 
