@@ -42,6 +42,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     
     # Our models
+    'CreateJob',
     'HomePage',
     'Profile',
     'RegisterBusiness',

@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div id="contentDiv" style="width:800px; margin-left:auto; margin-right:auto; margin-top:30px;">
+  <div style="float:left; width:190px;">
+    <span style="font-size:35px;">
+      Create Job
+    </span>
+  </div>
+  
+  <div style="float:left; width:610px;">
+    <div style="border-bottom-style:solid; border-width: 1px;">
+      Summary
+    </div>
+    
+    Title <br>
+    <div id="idDiv_PWD_UsernameTb" style="position:relative; width:302;">
+      <div class="textboxPlaceholder"> Environmental safety intern </div>
+      <input class="textboxWithPlaceholder" type="text" name="jobTitle" />
+    </div>
+    
+    Duration <br>
+    <div id="idDiv_PWD_UsernameTb" style="position:relative; width:302;">
+      <div class="textboxPlaceholder"> 3 months </div>
+      <input class="textboxWithPlaceholder" type="text" name="duration"/>
+    </div>
+    
+    Location <br>
+    <div id="idDiv_PWD_UsernameTb" style="position:relative; width:302;">
+      <div class="textboxPlaceholder"> Toronto, ON, Canada </div>
+      <input class="textboxWithPlaceholder" type="text" name="location"/>
+    </div>
+    
+    <div style="height:30px"></div>
+    
+    <div style="border-bottom-style:solid; border-width: 1px;">
+      Description
+    </div>
+    <div id="idDiv_PWD_UsernameTb" style="position:relative; width:100%; ">
+      <div class="textboxPlaceholder" style="height:200px;">  </div>
+      <textarea class="textboxWithPlaceholder" style="height:200px;width:100%;" rows="5" name="description"></textarea>
+    </div>
+    
+    <div style="height:30px"></div>
+    
+    <input type="submit" value="create"/>
+  </div>
+</div>
+
+{% endblock %}
