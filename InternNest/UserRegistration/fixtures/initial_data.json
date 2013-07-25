@@ -1,0 +1,38 @@
+[
+  {
+    "model": "UserRegistration.InternNestUser",
+    "pk": 1,
+    "fields": {
+      "first_name": "James",
+      "last_name": "Shaw",
+      "email": "business@test.com",
+      "date_of_birth": "1987-12-17",
+      "user_type_mask": "1",
+      "password": "pbkdf2_sha256$10000$8Vg9ZXHAMPmO$pMk5rLQleqCX3PFSlA96iBJixN5VzquyVPSKc8bwWUU="
+    }
+  },
+  {
+    "model": "UserRegistration.InternNestUser",
+    "pk": 2,
+    "fields": {
+      "first_name": "Emily",
+      "last_name": "Haines",
+      "email": "school@test.com",
+      "date_of_birth": "1987-12-17",
+      "user_type_mask": "2",
+      "password": "pbkdf2_sha256$10000$8Vg9ZXHAMPmO$pMk5rLQleqCX3PFSlA96iBJixN5VzquyVPSKc8bwWUU="
+    }
+  },
+  {
+    "model": "UserRegistration.InternNestUser",
+    "pk": 3,
+    "fields": {
+      "first_name": "Joshua",
+      "last_name": "Winstead",
+      "email": "student@test.com",
+      "date_of_birth": "1987-12-17",
+      "user_type_mask": "4",
+      "password": "pbkdf2_sha256$10000$8Vg9ZXHAMPmO$pMk5rLQleqCX3PFSlA96iBJixN5VzquyVPSKc8bwWUU="
+    }
+  }
+]
