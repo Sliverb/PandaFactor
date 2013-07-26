@@ -8,4 +8,4 @@ def createJob(request):
     if not (request.user.is_authenticated() and request.user.user_type_mask == UserTypeMasks.Business):
         return HttpResponseRedirect('/')
         
-    return render(request, 'CreateJob/index.html', {})
+    return render(request, 'CreateJob/create_job.html', {})

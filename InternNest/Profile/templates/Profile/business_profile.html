@@ -34,6 +34,19 @@
     </table>
     
     <div class="Divider"></div>
+    <div class="SpacerMedium"></div>
+    
+    {% if jobs_list %}
+      {% for job in jobs_list %}
+        {{ athlete.name }}
+        <div class="SpacerSmall"></div>
+      {% endfor %}
+    {% else %}
+      <div class="TextSubtleStyle">
+        You haven't created any jobs yet.
+      </div>
+    {% endif %}
+
     
     <div class="SpacerLarge"></div>
     
