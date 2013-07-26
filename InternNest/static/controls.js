@@ -3,8 +3,8 @@ $(document).ready(function(){
   $(".textboxWithPlaceholder").bind( "input", function(){
     var inputLength = $(this).val().length;
     if (inputLength > 0)
-        $(this).siblings(".textboxPlaceholder").hide();
+        $(this).css('background-color', 'white');
     else 
-        $(this).siblings(".textboxPlaceholder").show();
+        $(this).css('background-color', 'transparent');
   });
 });
