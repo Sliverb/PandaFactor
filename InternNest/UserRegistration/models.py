@@ -45,6 +45,7 @@ class InternNestUserManager(BaseUserManager):
         )
         user.is_admin = True
         user.is_superuser = True
+        user.is_staff = True
         user.save(using=self._db)
         return user
 
@@ -57,7 +58,7 @@ class InternNestUser(AbstractBaseUser, PermissionsMixin):
     user_type_mask = models.IntegerField()
     
     is_active = models.BooleanField(default=True)
-    is_admin = models.BooleanField(default=False)
+    is_admin = models.BooleanField(default=True)
     
     objects = InternNestUserManager()
     

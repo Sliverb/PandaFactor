@@ -10,60 +10,82 @@
   </div>
   
   <div style="float:left; width:610px;">
-    <div class="TextTitle2Style">
-      Summary
-    </div>
-    <div class="SpacerMedium"></div>
-    
-    <div class="TextNormalStyle">
-      Title
-    </div>
-    <div style="width:320px; position:relative;">
-      <div class="textboxPlaceholder"> Environmental safety intern </div>
-      <input class="textboxWithPlaceholder" type="text" name="jobTitle" />
-    </div>
-    <div class="SpacerMedium"></div>
-    
-    <div class="TextNormalStyle">
-      Duration
-    </div>
-    <div style="width:320px; position:relative;">
-      <div class="textboxPlaceholder"> 3 months </div>
-      <input class="textboxWithPlaceholder" type="text" name="duration"/>
-    </div>
-    <div class="SpacerMedium"></div>
-    
-    <div class="TextNormalStyle">
-      Location
-    </div>
-    <div style="width:320px; position:relative;">
-      <div class="textboxPlaceholder"> Toronto, ON, Canada </div>
-      <input class="textboxWithPlaceholder" type="text" name="location"/>
-    </div>
-    <div class="SpacerMedium"></div>
-    
-    <div class="TextNormalStyle">
-      Paid?
-    </div>
-    <select style="width:320px;">
-      <option value="test"> Paid </option>
-      <option value="test"> Unpaid </option>
-    </select>
-    
-    <div class="SpacerLarge"></div>
-    
-    <div class="TextTitle2Style">
-      Description
-    </div>
-    <div class="SpacerMedium"></div>
-    
-    <div style="width:100%" >
-      <textarea style="height:200px;" name="description"></textarea>
-    </div>
-    
-    <div class="SpacerLarge"></div>
-    
-    <input type="submit" value="Create"/>
+    <form action="/create/job/" method="post">
+      {% csrf_token %}
+      <div class="TextTitle2Style">
+        Summary
+      </div>
+      <div class="SpacerMedium"></div>
+      
+      <div class="TextNormalStyle">
+        Title
+      </div>
+      <div style="width:320px; position:relative;">
+        <div class="textboxPlaceholder"> Environmental safety intern </div>
+        {{ form.title }}
+      </div>
+      {% if form.title.errors %}
+        <div class="TextErrorStyle">
+          {{ form.title.errors.as_text }}
+        </div>
+      {% endif %}
+      <div class="SpacerMedium"></div>
+      
+      <div class="TextNormalStyle">
+        Duration
+      </div>
+      <div style="width:320px; position:relative;">
+        <div class="textboxPlaceholder"> 3 months </div>
+        {{ form.duration }}
+      </div>
+      {% if form.duration.errors %}
+        <div class="TextErrorStyle">
+          {{ form.duration.errors.as_text }}
+        </div>
+      {% endif %}
+      <div class="SpacerMedium"></div>
+      
+      <div class="TextNormalStyle">
+        Location
+      </div>
+      <div style="width:320px; position:relative;">
+        <div class="textboxPlaceholder"> Toronto, ON, Canada </div>
+        {{ form.location }}
+      </div>
+      {% if form.location.errors %}
+        <div class="TextErrorStyle">
+          {{ form.location.errors.as_text }}
+        </div>
+      {% endif %}
+      <div class="SpacerMedium"></div>
+      
+      <div class="TextNormalStyle">
+        Paid?
+      </div>
+      <div style="width:320px;">
+      {{ form.is_paid }}
+      </div>
+      {% if form.is_paid.errors %}
+        <div class="TextErrorStyle">
+          {{ form.is_paid.errors.as_text }}
+        </div>
+      {% endif %}
+      
+      <div class="SpacerLarge"></div>
+      
+      <div class="TextTitle2Style">
+        Description
+      </div>
+      <div class="SpacerMedium"></div>
+      
+      <div style="width:100%" >
+        {{ form.description }}
+      </div>
+      
+      <div class="SpacerLarge"></div>
+      
+      <input type="submit" value="Create"/>
+    </form>
   </div>
 </div>
 

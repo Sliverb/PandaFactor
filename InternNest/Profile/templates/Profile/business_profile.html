@@ -36,9 +36,9 @@
     <div class="Divider"></div>
     <div class="SpacerMedium"></div>
     
-    {% if jobs_list %}
-      {% for job in jobs_list %}
-        {{ athlete.name }}
+    {% if user.job_set.all %}
+      {% for job in user.job_set.all %}
+        {{ job.title }}
         <div class="SpacerSmall"></div>
       {% endfor %}
     {% else %}
