@@ -20,6 +20,12 @@
     font-size: 15px;
 }
 
+.TextErrorStyle
+{
+    font-size: 15px;
+    color: red;
+}
+
 
 /* Spacer styles */
 .SpacerLarge

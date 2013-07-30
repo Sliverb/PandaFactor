@@ -9,19 +9,21 @@
     </div>
     <div class="SpacerMedium"></div>
 
-    {% if register_error_message %}<p><span style="color:red;">{{ register_error_message }} </span></p>{% endif %}
-
-
     <form action="/register/" method="post">
-    {% csrf_token %}
+      {% csrf_token %}
     
         <div class="TextNormalStyle">
           First Name
         </div>
         <div style="position:relative;">
           <div class="textboxPlaceholder"> First </div>
-          <input class="textboxWithPlaceholder" type="text" name="firstName" value="{{ first_name }}"/>
+          {{ register_form.first_name }}
         </div>
+        {% if register_form.first_name.errors %}
+          <div class="TextErrorStyle">
+            {{ register_form.first_name.errors.as_text }}
+          </div>
+        {% endif %}
         <div class="SpacerMedium"></div>
         
         <div class="TextNormalStyle">
@@ -29,8 +31,13 @@
         </div>
         <div style="position:relative;">
           <div class="textboxPlaceholder"> Last </div>
-          <input class="textboxWithPlaceholder" type="text" name="lastName" value="{{ last_name }}"/>
+          {{ register_form.last_name }}
         </div>
+        {% if register_form.last_name.errors %}
+          <div class="TextErrorStyle">
+            {{ register_form.last_name.errors.as_text }}
+          </div>
+        {% endif %}
         <div class="SpacerMedium"></div>
         
         <div class="TextNormalStyle">
@@ -38,8 +45,13 @@
         </div>
         <div style="position:relative;">
           <div class="textboxPlaceholder"> someone@example.com </div>
-          <input class="textboxWithPlaceholder" type="email" name="email" maxlength="113" value="{{ email }}"/>
+          {{ register_form.email }}
         </div>
+        {% if register_form.email.errors %}
+          <div class="TextErrorStyle">
+            {{ register_form.email.errors.as_text }}
+          </div>
+        {% endif %}
         <div class="SpacerMedium"></div>
         
         <div class="TextNormalStyle">
@@ -47,8 +59,13 @@
         </div>
         <div style="position:relative;">
           <div class="textboxPlaceholder"> someone@example.com </div>
-          <input class="textboxWithPlaceholder" type="email" name="email2" maxlength="113" value="{{ email2 }}"/>
+          {{ register_form.email2 }}
         </div>
+        {% if register_form.email2.errors %}
+          <div class="TextErrorStyle">
+            {{ register_form.email2.errors.as_text }}
+          </div>
+        {% endif %}
         <div class="SpacerMedium"></div>
         
         <div class="TextNormalStyle">
@@ -56,8 +73,13 @@
         </div>
         <div style="position:relative;">
           <div class="textboxPlaceholder"> Password </div>
-          <input class="textboxWithPlaceholder" type="password" name="password" maxlength="16"/>
+          {{ register_form.password }}
         </div>
+        {% if register_form.password.errors %}
+          <div class="TextErrorStyle">
+            {{ register_form.password.errors.as_text }}
+          </div>
+        {% endif %}
         <div class="SpacerMedium"></div>
 
         <div class="TextNormalStyle">
@@ -65,8 +87,13 @@
         </div>
         <div style="position:relative;">
           <div class="textboxPlaceholder"> Password </div>
-          <input class="textboxWithPlaceholder" type="password" name="password2" maxlength="16"/>
+          {{ register_form.password2 }}
         </div>
+        {% if register_form.password2.errors %}
+          <div class="TextErrorStyle">
+            {{ register_form.password2.errors.as_text }}
+          </div>
+        {% endif %}
         <div class="SpacerMedium"></div>
         
         By clicking the sign up button, you agree to our <a href="#">terms</a>
@@ -74,8 +101,9 @@
         <div class="SpacerLarge"></div>
         <input type="submit" value="Sign Up"/>
         
+        <input type="hidden" name="user_type" id="user_type" value="{{ user_type }}" />
         
-        <input type="hidden" name="userType" id="userType" value="{{ user_type }}" />
+        {{ register_form.user_type }}
     </form>
   </div>
 
@@ -98,8 +126,13 @@
         </div>
         <div style="position:relative;">
           <div class="textboxPlaceholder"> someone@example.com </div>
-          <input class="textboxWithPlaceholder" type="email" name="email" maxlength="113"/>
+          {{ login_form.email }}
         </div>
+        {% if login_form.email.errors %}
+          <div class="TextErrorStyle">
+            {{ login_form.email.errors.as_text }}
+          </div>
+        {% endif %}
         <div class="SpacerMedium"></div>
         
         <div class="TextNormalStyle">
@@ -107,13 +140,18 @@
         </div>
         <div style="position:relative;">
           <div class="textboxPlaceholder"> Password </div>
-          <input class="textboxWithPlaceholder" type="password" name="password" maxlength="16"/>
+          {{ login_form.password }}
         </div>
+        {% if login_form.password.errors %}
+          <div class="TextErrorStyle">
+            {{ login_form.password.errors.as_text }}
+          </div>
+        {% endif %}
         <div class="SpacerLarge"></div>
         
         <input type="submit" value="Sign in"/>
         
-        <input type="hidden" name="userType" id="userType" value="{{ user_type }}" />
+        <input type="hidden" name="user_type" id="user_type" value="{{ user_type }}" />
     </form>
     
   </div>
