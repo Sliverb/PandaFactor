@@ -1,10 +1,12 @@
 Source code layout:
 [InternNest] Source code for the project
-   \--- [HomePage] Application for the home page
+   \--- [CreateJob] Form for creating a job. Contains the Job model.
+    |-- [HomePage] Application for the home page
     |-- [InterNest] Project settings
+    |-- [Profile] User profile page
     |-- [static] Global static files
     |-- [templates] Global template files
-    |-- [UserRegisteration] Application for registering users
+    |-- [UserRegisteration] Application for registering users. Contains the InternestUser model.
 
 [env]
   Virtualenv files. This directory is largely ignorable. 
