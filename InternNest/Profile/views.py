@@ -9,8 +9,10 @@ def profileView(request):
             return render(request, 'Profile/student_profile.html', {})
         if request.user.user_type_mask == UserTypeMasks.Business:
             return render(request, 'Profile/business_profile.html', {})
+        if request.user.user_type_mask == UserTypeMasks.School:
+            return render(request, 'Profile/school_profile.html', {})
             
         # Fallback to a default profile for now
-        return render(request, 'Profile/profile.html', {})
+        return HttpResponse("Unsupported user type")
     else:
         return HttpResponseRedirect('/register/')
