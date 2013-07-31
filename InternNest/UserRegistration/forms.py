@@ -1,5 +1,7 @@
-from django.forms import CharField, EmailField, Form, HiddenInput, IntegerField, PasswordInput, TextInput, ValidationError, widgets
+import datetime
+from django.forms import CharField, DateField, EmailField, Form, HiddenInput, IntegerField, PasswordInput, TextInput, ValidationError, widgets
 from django.contrib.auth import get_user_model
+from django.forms.extras.widgets import SelectDateWidget
 
 class LoginForm(Form):
     email = EmailField(max_length=100, widget=TextInput(attrs={'class':'textboxWithPlaceholder'}))
@@ -37,6 +39,9 @@ class RegisterUserForm(Form):
     email2 = EmailField(max_length=100, widget=TextInput(attrs={'class':'textboxWithPlaceholder'}))
     password = CharField(widget=PasswordInput(attrs={'class':'textboxWithPlaceholder'}))
     password2 = CharField(widget=PasswordInput(attrs={'class':'textboxWithPlaceholder'}))
+    
+    BIRTH_YEAR_CHOICES = range(datetime.date.today().year - 10, datetime.date.today().year - 110, -1) 
+    birthday = DateField(widget=SelectDateWidget(years=BIRTH_YEAR_CHOICES))
     
     # Additional validation logic
     def clean(self):

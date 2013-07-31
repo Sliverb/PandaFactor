@@ -21,7 +21,7 @@ To stop using virtualenv, type "deactivate"
 2) Start the server
     InternNest\manage.py runserver
 3) In a web browser, visit:
-    http://127.0.0.1:8000/
+    http://localhost:8000/
 
 Tech Stack:
 - Django 1.5.1

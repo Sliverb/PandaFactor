@@ -96,6 +96,19 @@
         {% endif %}
         <div class="SpacerMedium"></div>
         
+        <div class="TextNormalStyle" >
+          Birthday
+        </div>
+        <div style="background-color:white"> 
+          {{ register_form.birthday }}
+        </div>
+        {% if register_form.birthday.errors %}
+          <div class="TextErrorStyle">
+            {{ register_form.birthday.errors.as_text }}
+          </div>
+        {% endif %}
+        <div class="SpacerMedium"></div>
+        
         By clicking the sign up button, you agree to our <a href="#">terms</a>
         
         <div class="SpacerLarge"></div>

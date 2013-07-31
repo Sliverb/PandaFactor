@@ -86,13 +86,14 @@ def registerUserShared(request, default_user_type):
             last_name = form.cleaned_data['last_name']
             email = form.cleaned_data['email']
             password = form.cleaned_data['password']
+            birthday = form.cleaned_data['birthday']
             user_type = int(request.POST['user_type'])
 
             get_user_model().objects.create_user(
                 first_name = first_name,
                 last_name = last_name,
                 email = email,
-                date_of_birth = date.today(),
+                date_of_birth = birthday,
                 user_type_mask = user_type,
                 password = password,
             )

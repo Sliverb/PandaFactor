@@ -18,7 +18,7 @@
       "first_name": "Emily",
       "last_name": "Haines",
       "email": "school@test.com",
-      "date_of_birth": "1987-12-17",
+      "date_of_birth": "1974-01-25",
       "user_type_mask": "2",
       "password": "pbkdf2_sha256$10000$8Vg9ZXHAMPmO$pMk5rLQleqCX3PFSlA96iBJixN5VzquyVPSKc8bwWUU="
     }
