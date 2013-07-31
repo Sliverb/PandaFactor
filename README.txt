@@ -2,7 +2,6 @@ Source code layout:
 [InternNest] Source code for the project
    \--- [HomePage] Application for the home page
     |-- [InterNest] Project settings
-    |-- [RegisterBusiness] Ignore. Will get deleted. 
     |-- [static] Global static files
     |-- [templates] Global template files
     |-- [UserRegisteration] Application for registering users

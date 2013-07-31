@@ -1,4 +1,5 @@
 from django.forms import CharField, EmailField, Form, HiddenInput, IntegerField, PasswordInput, TextInput, ValidationError, widgets
+from django.contrib.auth import get_user_model
 
 class LoginForm(Form):
     email = EmailField(max_length=100, widget=TextInput(attrs={'class':'textboxWithPlaceholder'}))

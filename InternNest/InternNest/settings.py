@@ -45,7 +45,6 @@ INSTALLED_APPS = (
     'CreateJob',
     'HomePage',
     'Profile',
-    'RegisterBusiness',
     'UserRegistration',
 )
 

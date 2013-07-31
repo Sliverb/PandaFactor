@@ -96,8 +96,11 @@ def registerUserShared(request, default_user_type):
                 user_type_mask = user_type,
                 password = password,
             )
+            user = authenticate(username=email, password=password) 
+            login(request, user)
             return HttpResponseRedirect('/profile/')
             
+        context['login_error_message'] = 'some invalid data login credentials'
         context['user_type'] = int(request.POST['user_type'])
         context['login_form'] = LoginForm()
         context['register_form'] = form
