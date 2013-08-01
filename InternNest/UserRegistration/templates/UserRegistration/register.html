@@ -3,6 +3,30 @@
 {% block content %}
 
 <div style="margin-left:auto; margin-right:auto; width:840px;">
+  <div>
+    
+    {% ifequal user_type 4 %}
+    <span span style="text-decoration:underline">
+    {% else %}
+    <span>
+    {% endifequal %}
+    <a href="/register/student/">Student</a></span>
+    
+    {% ifequal user_type 2 %}
+    <span span style="text-decoration:underline">
+    {% else %}
+    <span>
+    {% endifequal %}
+    <a href="/register/school/">School</a></span>
+  
+    {% ifequal user_type 1 %}
+    <span span style="text-decoration:underline">
+    {% else %}
+    <span>
+    {% endifequal %}
+    <a href="/register/business/">Business</a></span>
+  </div>
+  
   <div style="float:left; margin-right:50px; width:320px;">
     <div class="TextTitle1Style">
       Sign Up
