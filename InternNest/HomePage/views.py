@@ -6,3 +6,7 @@ def index(request):
         'context_message': "This string is used in \\InternNest\\HomePage\\templates\\HomePage\\body.html",
     }
     return render(request, 'HomePage/body.html', context)
+    
+def termsOfUse(request):
+    context = {}
+    return render(request, 'HomePage/terms_of_use.html', context)
