@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div id="contentDiv" style="width:800px; margin-left:auto; margin-right:auto; margin-top:30px;">
+  <div style="float:left; width:190px;">
+    <div class="TextTitle1Style">
+      Contact Info
+    </div>
+  </div>
+  
+  <div style="float:left; width:610px;">
+    <form action="/profile/contactinfo/" method="post">
+      {% csrf_token %}
+      
+      <div class="TextNormalStyle">
+        Phone
+      </div>
+      <div style="width:320px; position:relative;">
+        <div class="textboxPlaceholder"> (123) 456-7890 </div>
+        {{ form.phone }}
+      </div>
+      {% if form.phone.errors %}
+        <div class="TextErrorStyle">
+          {{ form.phone.errors.as_text }}
+        </div>
+      {% endif %}
+      <div class="SpacerMedium"></div>
+      
+      <div class="TextNormalStyle">
+        Email
+      </div>
+      <div style="width:320px; position:relative;">
+        <div class="textboxPlaceholder"> someone@email.com </div>
+        {{ form.email }}
+      </div>
+      {% if form.email.errors %}
+        <div class="TextErrorStyle">
+          {{ form.email.errors.as_text }}
+        </div>
+      {% endif %}
+      <div class="SpacerMedium"></div>
+      
+      <div class="TextNormalStyle">
+        Address
+      </div>
+      <div style="width:320px; position:relative;">
+        <div class="textboxPlaceholder"> Toronto, ON, Canada </div>
+        {{ form.address }}
+      </div>
+      {% if form.address.errors %}
+        <div class="TextErrorStyle">
+          {{ form.address.errors.as_text }}
+        </div>
+      {% endif %}
+      
+      <div class="SpacerLarge"></div>
+      
+      <input type="submit" value="Save"/>
+    </form>
+  </div>
+</div>
+
+{% endblock %}

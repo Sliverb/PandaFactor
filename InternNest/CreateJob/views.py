@@ -1,15 +1,15 @@
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
 
-from UserRegistration.models import UserTypeMasks
 from CreateJob.forms import CreateJobForm
 from CreateJob.models import Job
 
 
 def createJob(request):
+    # Only allow logged in businesses to see this page
     if not request.user.is_authenticated():
         return HttpResponseRedirect('/register/login/')
-    if request.user.is_authenticated() and request.user.user_type_mask != UserTypeMasks.Business:
+    if not request.user.is_business():
         return HttpResponseRedirect('/profile/')
     
     if request.method == 'POST':

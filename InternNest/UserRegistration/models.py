@@ -1,5 +1,6 @@
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, PermissionsMixin
 from django.db import models
+from datetime import datetime
 
 # Enum of possible user type mask values
 class UserTypeMasks:
@@ -34,18 +35,17 @@ class InternNestUserManager(BaseUserManager):
         user.save(using=self._db)
         return user
 
-    def create_superuser(self, first_name, last_name, date_of_birth, email, user_type_mask, password):
+    def create_superuser(self, email, password):
         user = self.create_user(
-            first_name = first_name,
-            last_name = last_name,
-            date_of_birth = date_of_birth,
+            first_name = "JARON",
+            last_name = "Andre",
+            date_of_birth = datetime.now(),
             email = email,
-            user_type_mask = user_type_mask,
+            user_type_mask = 4,
             password = password,
         )
         user.is_admin = True
         user.is_superuser = True
-        user.is_staff = True
         user.save(using=self._db)
         return user
 
@@ -57,13 +57,16 @@ class InternNestUser(AbstractBaseUser, PermissionsMixin):
     date_of_birth = models.DateField()
     user_type_mask = models.IntegerField()
     
+    phone = models.CharField(max_length=30)
+    address = models.CharField(max_length=30)
+    
     is_active = models.BooleanField(default=True)
     is_admin = models.BooleanField(default=True)
     
     objects = InternNestUserManager()
     
     USERNAME_FIELD = 'email'
-    REQUIRED_FIELDS = ['first_name', 'last_name', 'date_of_birth', 'user_type_mask']
+    REQUIRED_FIELDS = []
     
     def get_full_name(self):
         full_name = '%s %s' % (self.first_name, self.last_name)
@@ -86,4 +89,13 @@ class InternNestUser(AbstractBaseUser, PermissionsMixin):
     @property
     def is_staff(self):
         return self.is_admin
+        
+    def is_business(self):
+        return self.user_type_mask & UserTypeMasks.Business
+        
+    def is_student(self):
+        return self.user_type_mask & UserTypeMasks.Student
+    
+    def is_school(self):
+        return self.user_type_mask & UserTypeMasks.School
 
