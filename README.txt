@@ -27,5 +27,3 @@ Tech Stack:
 - Django 1.5.1
 - Python 2.7.5
 - JQuery 1.10.2
-
-Testing that bayo's new setup can push to GIT
