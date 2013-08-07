@@ -10,6 +10,7 @@ class Job(models.Model):
     location = models.CharField(max_length=100)
     is_paid = models.BooleanField(default=True)
     description = models.CharField(max_length=800)
+    is_public = models.BooleanField(default=True)
 
     def __unicode__(self):
         return self.title

@@ -55,6 +55,7 @@ class InternNestUser(AbstractBaseUser, PermissionsMixin):
     last_name = models.CharField(max_length=30)
     email = models.EmailField(unique=True, db_index=True, max_length=254)
     date_of_birth = models.DateField()
+    last_login_at = models.DateField(default=datetime.now())
     user_type_mask = models.IntegerField()
     
     phone = models.CharField(max_length=30)
