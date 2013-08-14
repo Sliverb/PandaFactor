@@ -28,4 +28,4 @@ Tech Stack:
 - South 0.8.2 (Django DB migration)
 - Python 2.7.5
 - JQuery 1.10.2
-- Blackboard
+- Tes Test
